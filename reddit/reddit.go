@@ -103,7 +103,7 @@ func Submit(token Token, releaseBody github.ReleaseRequestBody, submitBody Submi
 
 	req, err := http.NewRequest("POST", url, nil)
 	req.Header.Add("User-Agent", "OSS Bot 0.1")
-    req.Header.Add("Content-Type", "x-www-form-url-encoded")
+    req.Header.Add("Content-Type", "application/x-www-form-url-encoded")
 	req.Header.Add("Authorization", "Bearer " + token.AccessToken)
 
     client := &http.Client{}

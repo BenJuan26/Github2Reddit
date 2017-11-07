@@ -7,7 +7,7 @@ import (
 )
 
 type Release struct {
-	URL        string `json:"http_url"`
+	URL        string `json:"html_url"`
 	ID         int    `json:"id"`
 	TagName    string `json:"tag_name"`
 	Name       string `json:"name,omitempty"`
