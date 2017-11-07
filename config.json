@@ -5,5 +5,10 @@
     "client_id":"GZVLRFiM426x1g",
     "client_secret":"ziIF4r2BNEsDFrbfNJUTuyQ7Qec",
     "port":9000,
-    "subreddit":"BenJuan26"
+    "reddit_post":{
+        "subreddit":"BenJuan26",
+        "title":"Release: {{.Repository.Name}} {{.Release.Name}}",
+        "text":"Download the latest release from the [Github release page]({{.Release.URL}})",
+        "kind":"self"
+    }
 }

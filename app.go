@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
+	//"io/ioutil"
 	"net/http"
 	"strconv"
 
 	"github.com/BenJuan26/Github2Reddit/config"
-	//"github.com/BenJuan26/Github2Reddit/reddit"
+	"github.com/BenJuan26/Github2Reddit/reddit"
 	"github.com/BenJuan26/Github2Reddit/github"
 	"github.com/gorilla/mux"
 )
@@ -27,7 +28,21 @@ func main() {
 }
 
 func handleWebhook(w http.ResponseWriter, r *http.Request) {
-	release := github.ParseReleasePayload(r)
+	body, err := github.ParseReleasePayload(r)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 
-	fmt.Println(release.Name)
+	token, err := reddit.GetToken(conf.BotUser, conf.BotPass, conf.ClientID, conf.ClientSecret, conf.BotName)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	err = reddit.Submit(token, body, conf.RedditPost)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 }
