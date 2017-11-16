@@ -1,12 +1,12 @@
 {
-    "bot_name":"OSS Bot 0.1",
-    "user":"OSS_Bot",
-    "pass":"nine8xml",
-    "client_id":"GZVLRFiM426x1g",
-    "client_secret":"ziIF4r2BNEsDFrbfNJUTuyQ7Qec",
+    "bot_name":"My Bot",
+    "user":"MyBotRedditUser",
+    "pass":"RedditPass",
+    "client_id":"YUPEFOioU4LggQ",
+    "client_secret":"eMTTa_mdzV6DUf49EmztvXfk4lo",
     "port":9000,
     "reddit_post":{
-        "subreddit":"BenJuan26",
+        "subreddit":"MySubreddit",
         "title":"Release: {{.Repository.Name}} {{.Release.Name}}",
         "text":"Download the latest release from the [Github release page]({{.Release.URL}})",
         "kind":"self"
